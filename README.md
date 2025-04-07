@@ -1,13 +1,13 @@
-# Explosive Growth Prediction Bot 🚀
+# Money Maker Bot 💸
 
 ## Overview
-The Explosive Growth Prediction Bot is an AI-powered trading bot designed to identify cryptocurrencies that are likely to experience massive short-term gains (500%+). It combines real-time market data, sentiment analysis from social media, and machine learning models to predict price surges and automate trades.
+The Money Maker Bot is an advanced trading bot designed to identify cryptocurrencies with explosive growth potential and automate trades for maximum profitability. It combines real-time market analysis, sentiment analysis, AI predictions, and risk management to make informed trading decisions.
 
 ## Features
-- **Real-Time Market Analysis**: Fetches live price data from Binance API.
-- **Sentiment Analysis**: Analyzes Twitter and Reddit data to detect hype around specific assets.
-- **AI Predictions**: Uses machine learning to predict explosive price movements.
-- **Automated Trading**: Places buy/sell orders based on clear signals.
+- **Plug-and-Play Design**: Minimal setup required; just input your API keys.
+- **AI Predictions**: Uses machine learning to predict price movements.
+- **Sentiment Analysis**: Detects hype on Twitter and Reddit before price surges.
+- **Risk Management**: Implements stop-loss and take-profit mechanisms.
 - **Backtesting**: Simulates strategies on historical data for optimization.
 
 ## Installation
@@ -18,26 +18,26 @@ The Explosive Growth Prediction Bot is an AI-powered trading bot designed to ide
 
 ### Steps
 1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/explosive-growth-bot.git
-   cd explosive-growth-bot
-   ```
+git clone https://github.com/yourusername/money-maker-bot.git
+cd money-maker-bot
+
+text
 
 2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+pip install -r requirements.txt
+
+text
 
 3. Configure your API keys in `src/config.py`.
 
 4. Run the bot:
-   ```
-   python src/bot.py
-   ```
+python src/bot.py
+
+text
 
 ## Usage
 
-The bot automatically fetches market data, analyzes sentiment, and predicts price movements. It will execute trades based on predefined thresholds.
+The bot automatically fetches market data, analyzes sentiment, predicts price movements, and executes trades based on predefined thresholds.
 
 ## License
 
