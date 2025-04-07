@@ -1,0 +1,12 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# Logs and temporary files
+*.log
+
+# Data files (optional)
+data/
