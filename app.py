@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from prophet import Prophet
 import plotly.graph_objs as go
-import requests
 from sklearn.ensemble import RandomForestClassifier
 from textblob import TextBlob
 import yfinance as yf
@@ -25,7 +24,7 @@ RANDOM_FOREST_PARAMS = {
 }
 
 # --- Data Fetching Functions ---
-def fetch_crypto_data(symbol, interval="1h", limit=100):
+def fetch_crypto_data(symbol, interval="1h"):
     try:
         ticker = yf.Ticker(symbol)
         if interval == "1h":
@@ -267,7 +266,7 @@ def analyze_market(market_type, symbol, interval, forecast_steps, daily_seasonal
     df = calculate_technical_indicators(df)
 
     df_prophet = prepare_data_for_prophet(df)
-    freq = "h" if interval == "1h" or interval == "60min" else "d"
+    freq = "h" if interval == "1h" else "d"
     forecast_df, prophet_error = prophet_wrapper(
         df_prophet,
         forecast_steps,
@@ -332,10 +331,11 @@ with gr.Blocks(theme=gr.themes.Base()) as demo:
 
     def update_symbol_choices(market_type):
         if market_type == "Crypto":
-            return gr.Dropdown(choices=CRYPTO_SYMBOLS, value="BTC-USD")
+            return gr.Dropdown.update(choices=CRYPTO_SYMBOLS, value="BTC-USD")
         elif market_type == "Stock":
-            return gr.Dropdown(choices=STOCK_SYMBOLS, value="AAPL")
-        return gr.Dropdown(choices=[], value=None)
+            return gr.Dropdown.update(choices=STOCK_SYMBOLS, value="AAPL")
+        return gr.Dropdown.update(choices=[], value=None)
+        
     market_type_dd.change(fn=update_symbol_choices, inputs=[market_type_dd], outputs=[symbol_dd])
 
     analyze_button = gr.Button("Analyze Market", variant="primary")
